@@ -1,0 +1,129 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="AR_DP_REP_CONVERSIONPREAPEDIDO_RA.AR_DP_REP_CONVERSIONPREAPEDIDO_RA.controller.master" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page title="Title">
+					<content>
+						<Panel>
+							<HBox>
+								<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="22%" justifyContent="Start" visible="true" displayInline="false"
+									id="dealer1">
+									<items>
+										<Label text="Dealer" design="Bold"/>
+										<ComboBox xmlns="sap.m" id="dealer" placeholder="Solicitante" width="100%" items="{path: 'cliente>/'}" loadItems="ConsultaDestinatario"
+											change="ConsultaDestinatario">
+											<items>
+												<core:Item xmlns:core="sap.ui.core" key="{cliente>SOLICITANTE}" text="{cliente>NOMBRE_SOLICITANTE}"/>
+											</items>
+										</ComboBox>
+									</items>
+								</VBox>
+								<HBox width="3%"/>
+								<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="22%" justifyContent="Start" visible="true" displayInline="false">
+									<items>
+										<Label text="Fecha Pedido" design="Bold"/>
+										<DateRangeSelection id="Fecha" change="fechas"/>
+									</items>
+								</VBox>
+								<HBox width="3%"/>
+								<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="22%" justifyContent="Start" visible="true" displayInline="false">
+									<items>
+										<Label text="Pre-Orden" design="Bold"/>
+										<Input id="PreOrden"/>
+									</items>
+								</VBox>
+								<HBox width="3%"/>
+								<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="22%" justifyContent="Start" visible="true" displayInline="false">
+									<items>
+										<Label text="VIN" design="Bold"/>
+										<Input id="Vin"/>
+									</items>
+								</VBox>
+							</HBox>
+							<VBox height="10px"/>
+							<HBox>
+								<!--<HBox width="3%"/>-->
+								<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="22%" justifyContent="Start" visible="true" displayInline="false">
+									<items>
+										<Label text="Pedido Dealer" design="Bold"/>
+										<Input id="Referencia"/>
+									</items>
+								</VBox>
+								<HBox width="3%"/>
+								<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="22%" justifyContent="Start" visible="true" displayInline="false">
+									<items>
+										<Label text="" design="Bold"/>
+										<Button text="Buscar" id="BtnBuscar" press="ConsultaPedidos"/>
+									</items>
+								</VBox>
+							</HBox>
+						</Panel>
+						<Panel>
+							<!--<VBox>-->
+							<HBox justifyContent="End">
+								<Button type="Transparent" text=" Enviar" icon="sap-icon://email" press="EnvioCorreo"/>
+								<Button type="Transparent" text=" Descargar" icon="sap-icon://excel-attachment" press="downloadExcel"/>
+							</HBox>
+							<Table id="suppliersTable" items="{oferta2>/}" mode="SingleSelectLeft" alternateRowColors="true" growingThreshold="10"
+								selectionChange="AgruparMateriales">
+								<columns>
+									<Column hAlign="Left" width="auto">
+										<Text text="Pre Orden"/>
+									</Column>
+									<Column hAlign="Left" width="auto">
+										<Text text="Destinatario"/>
+									</Column>
+									<Column hAlign="Left" width="auto">
+										<Text text="Fecha Inicio Vigencia"/>
+									</Column>
+									<Column hAlign="Left" width="auto">
+										<Text text="Fecha Fin Vigencia"/>
+									</Column>
+									<Column hAlign="Left" width="auto">
+										<Text text="Fecha Creación"/>
+									</Column>
+									<Column hAlign="Left" width="auto">
+										<Text text="VIN"/>
+									</Column>
+									<Column hAlign="Left" width="auto">
+										<Text text="Pedido Dealer"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem type="Inactive">
+										<cells>
+											<Text text="{path: 'oferta2>Preorden'}"/>
+											<Text text="{path: 'oferta2>Destinatario'}"/>
+											<Text text="{path: 'oferta2>Iniciovigencia'}"/>
+											<Text text="{path: 'oferta2>Fechafinvalidacion'}"/>
+											<Text text="{path: 'oferta2>Fechacreacion'} "/>
+											<Text text="{path: 'oferta2>Vin'}"/>
+											<Text text="{path: 'oferta2>Referencia'}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</Panel>
+					</content>
+					<customHeader>
+						<Bar class="sapContrastPlus" design="Header" visible="false">
+							<contentMiddle>
+								<VBox width="15px"/>
+								<Text text="prueba de conceptos" class="tituloHead" textAlign="Center"/>
+							</contentMiddle>
+						</Bar>
+					</customHeader>
+					<footer >
+						<Bar class="sapContrast sapContrastPlus">
+							<contentRight>
+								<Button id="Verificar" text="Verificar" type="Accept" press="Verificar" class="sapUiSmallMarginEnd"/>
+								<Button id="atras" text="Salir" type="Reject"  icon="sap-icon://log" press="onSalir" class="sapUiSmallMarginEnd"/>
+							</contentRight>
+						</Bar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
