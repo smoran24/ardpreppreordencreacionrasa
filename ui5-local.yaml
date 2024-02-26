@@ -2,7 +2,7 @@
 
 specVersion: "2.5"
 metadata:
-  name: ardpreppreordencreacionexpo
+  name: ardpreppreordencreacionrasa
 type: application
 framework:
   name: SAPUI5
@@ -35,5 +35,5 @@ server:
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:
-        component: ardpreppreordencreacionexpo
+        component: ardpreppreordencreacionrasa
         ui5Theme: sap_fiori_3

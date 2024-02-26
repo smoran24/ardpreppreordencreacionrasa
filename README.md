@@ -8,7 +8,7 @@
 |**Floorplan Used**<br>simple|
 |**Service Type**<br>None|
 |**Service URL**<br>N/A
-|**Module Name**<br>ardpreppreordencreacionexpo|
+|**Module Name**<br>ardpreppreordencreacionrasa|
 |**Application Title**<br>App Title|
 |**Namespace**<br>|
 |**UI5 Theme**<br>sap_fiori_3|
@@ -16,7 +16,7 @@
 |**Enable Code Assist Libraries**<br>False|
 |**Add Eslint configuration**<br>False|
 
-## ardpreppreordencreacionexpo
+## ardpreppreordencreacionrasa
 
 A Fiori application.
 
